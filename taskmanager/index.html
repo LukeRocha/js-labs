@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/resources/css/style.css" />
+    <title>Task Manager</title>
+  </head>
+  <body>
+    <div class="newTask-bg">
+      <div class="newTask">
+        <input type="text" id="taskInput" autofocus />
+        <input type="button" onclick="addTask()" value="Add task" />
+      </div>
+    </div>
+
+    <div class="headerContainer">
+      <div class="header-sup">
+        <h2>Task manager</h2>
+        <h3>keep your stuff in order</h3>
+      </div>
+      <div class="filter">
+        <input
+          type="search"
+          name="filter"
+          id="filter"
+          onkeyup="filter()"
+          placeholder="search task here..."
+        />
+        <input
+          type="button"
+          onclick="showImCompleteTasks()"
+          value="Undone tasks"
+        />
+        <input type="button" onclick="filter()" value="Done tasks" />
+        <input type="button" value="show all" onclick="showAllTasks()" />
+        <button onclick="createTask()">New task</button>
+      </div>
+    </div>
+    <div class="taskArea"></div>
+    <script src="/resources/javascript/script.js"></script>
+  </body>
+</html>

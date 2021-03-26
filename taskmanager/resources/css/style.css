@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.newTask-bg {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 40%;
+}
+
+.headerContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.header-sup {
+  background: #1e1d52;
+  padding: 6px;
+  color: white;
+}
+
+.filter {
+  padding: 4px;
+  background: #4d5a5a;
+}
+
+.taskArea {
+  display: flex;
+  flex-flow: column wrap;
+  background: silver;
+  height: 100vh;
+  padding: 5px;
+}
+
+.taskArea button {
+  height: 20px;
+  width: 90px;
+  margin: 0 auto;
+}
+
+.tasks {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row-reverse nowrap;
+  width: 40%;
+  padding: 6px;
+  margin: 5px auto;
+  border-radius: 4px;
+  background: slategrey;
+  color: white;
+}
