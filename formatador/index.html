@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Name formatter</title>
+    <link rel="stylesheet" href="/style.css" />
+    <script src="/script.js"></script>
+  </head>
+
+  <body>
+    <div class="formatter">
+      <h1>Name formatter</h1>
+      <div>
+        <h1>Add new name</h1>
+        <input type="text" id="nameToAdd" />
+        <button onclick="addNameToQueue()">Add name to queue</button>
+      </div>
+
+      <hr />
+
+      <div>
+        <h1>Names on queue</h1>
+        <ul id="namesQueue"></ul>
+        <button onclick="formatNamesOnQueue()">Format names on queue</button>
+      </div>
+
+      <hr />
+
+      <div>
+        <h1>Formatted names history</h1>
+        <ul id="formattedNamesHistory"></ul>
+      </div>
+    </div>
+  </body>
+</html>
