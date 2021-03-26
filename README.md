@@ -1,1 +1,1 @@
-Some personal study projects
+Some vanilla Js personal study projects
