@@ -1,0 +1,28 @@
+.calculator {
+  font-family: Arial;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  width: 250px;
+  padding: 10px;
+  border: solid 1px orange;
+  background: #efefef;
+  color: black;
+  text-align: end;
+}
+
+.display {
+  width: 240px;
+  height: 18px;
+  border: 1px orange solid;
+  background: white;
+}
+
+.button {
+  width: 30px;
+  margin: 4px;
+  padding: 4px;
+  border: orange solid 1px;
+  background: grey;
+  color: white;
+}
