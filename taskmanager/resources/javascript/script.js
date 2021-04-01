@@ -15,12 +15,6 @@ function doneTask(element) {
   element.parentNode.style.background = "slategrey";
 }
 
-function showAllTasks() {
-  for (elements of tasks) {
-    elements.style.display = "flex";
-  }
-}
-
 function addTask() {
   const p = document.createElement("p");
   const task = document.getElementById("taskInput");
@@ -37,29 +31,11 @@ function addTask() {
   document.querySelector(".newTask-bg").style.display = "none";
 }
 
-function showcompleteTasks() {
-  for (elements of tasks) {
-    if (elements.className !== "completedTask") {
-      elements.style.display = "none";
-    } else {
-      elements.style.display = "flex";
-    }
-  }
-}
-
-function showImCompleteTasks() {
-  for (elements of tasks) {
-    if (elements.className !== "completedTask") elements.style.display = "flex";
-  }
-  return (elements.style.display = "none");
-}
-
 function filter() {
   const tasks = document.querySelector(".taskArea").children;
   const term = document.getElementById("filter").value.toUpperCase();
 
   for (task of tasks) {
-    console.log(task.innerText);
     if (task.innerText.toUpperCase().indexOf(term) > -1) {
       task.style.display = "";
     } else {
