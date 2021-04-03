@@ -1,4 +1,4 @@
-const select = document.querySelector;
+let playerName = document.querySelector("#player-name").value;
 let points = 0;
 let questions = [
   {
@@ -50,4 +50,21 @@ let questions = [
   },
 ];
 
-function questionTest() {}
+function startQuiz() {
+  setTimeout(() => {
+    document.querySelector(".player-inputs").style.display = "none";
+    document.querySelector(".quiz-area").style.display = "flex";
+  }, 400);
+  renderQuestions();
+}
+
+function renderQuestions() {
+  for (let question of questions) {
+    document.querySelector(
+      "#question-index"
+    ).innerHTML = `Question ${question.id} of 5`;
+    document.querySelector("#question").innerHTML = question.question;
+    document.querySelector("#alternative-a").innerHTML =
+      question.alternatives.a;
+  }
+}
