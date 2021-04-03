@@ -13,14 +13,14 @@ body {
   padding: 5px;
 
   background: #2c2f31;
-  color: cornsilk;
+  color: white;
 }
 
 .logo {
   width: 40vw;
   margin: 0 auto;
 
-  border-radius: 2px;
+  border-radius: 8px;
   border: 1px solid black;
   background: #663fad;
 }
@@ -33,9 +33,9 @@ body {
   top: 20%;
   left: 25%;
 
-  background: cornsilk;
+  background: white;
   border: 1px solid black;
-  border-radius: 2px;
+  border-radius: 8px;
 }
 
 .quiz-area h2 {
@@ -56,8 +56,37 @@ body {
   border: black 1px solid;
 }
 
-/* 
-position: absolute;
-width: 50%;
-top: 20%;
-left: 25%; */
+.player-inputs {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 50%;
+  top: 20%;
+  left: 25%;
+
+  background: #663fad;
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.player-inputs h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: white;
+}
+
+.player-inputs input {
+  width: 15vw;
+  margin: 0 auto;
+
+  border-radius: 4px;
+  color: #663fad;
+  font-weight: bolder;
+}
+
+#start-button {
+  margin-top: 5px;
+  color: #663fad;
+  background: white;
+}
