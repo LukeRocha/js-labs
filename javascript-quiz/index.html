@@ -10,24 +10,30 @@
       rel="stylesheet"
     />
     <title>|| Javascript Quiz ||</title>
-    <link rel="stylesheet" href="/javascript-quiz/source/style.css" />
+    <link rel="stylesheet" href="/source/style.css" />
   </head>
   <body>
     <header class="header"><h1 class="logo">Javascript Quiz</h1></header>
 
     <section class="player-inputs">
       <h2>Hey, lets play a JavaScrip Quiz?</h2>
-      <input type="text" name="" id="player-name" placeholder="Input your name...">
-      <input type="button" onclick="startQuiz()" value="Start" id="start-button" />
+      <input
+        type="text"
+        name=""
+        id="player-name"
+        placeholder="Input your name..."
+      />
+      <input
+        type="button"
+        onclick="startQuiz()"
+        value="Start"
+        id="start-button"
+      />
     </section>
     <section class="quiz-area">
-      <h2 id="question-index"></h2>
-      <h2 id="question"></h3>
-      <ul>
-        <li><p id="alternative-a"></p></li>
-        <li><p id="alternative-b"></p></li>
-      </ul>
+      <button id="submit-button">Submit</button>
     </section>
-    <script src="/javascript-quiz/source/script.js"></script>
+    <section class="results"></section>
+    <script src="/source/script.js"></script>
   </body>
 </html>

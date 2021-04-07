@@ -39,8 +39,12 @@ body {
 }
 
 .quiz-area h2 {
-  margin: 0 auto;
-  padding: 4px;
+  text-align: center;
+  color: #663fad;
+}
+
+.quiz-area h3 {
+  padding: 20px;
 }
 
 .quiz-area ul {
@@ -90,4 +94,14 @@ body {
   margin-top: 5px;
   color: #663fad;
   background: white;
+}
+
+button {
+  width: 20vw;
+  margin: 8px;
+  align-self: center;
+  background: #663fad;
+  color: white;
+  border: 1px black solid;
+  border-radius: 6px;
 }
