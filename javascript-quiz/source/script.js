@@ -2,12 +2,12 @@ const playerName = document.querySelector("#player-name").value;
 const questions = [
   {
     id: 1,
-    question: "JavaScript is case sensitive?",
+    question: "Is JavaScript case sensitive?",
     alternatives: {
-      a: "True",
-      b: "False",
+      a: "Yes",
+      b: "No",
     },
-    correct: "a",
+    correct: "Yes",
   },
   {
     id: 2,
@@ -16,7 +16,7 @@ const questions = [
       a: "function = my.function{}",
       b: "function myFunction(){}",
     },
-    correct: "b",
+    correct: "function myFunction(){}",
   },
   {
     id: 3,
@@ -26,7 +26,7 @@ const questions = [
       a: "script name:xxx.js",
       b: "script src='xxx.js",
     },
-    correct: "b",
+    correct: "script src='xxx.js",
   },
   {
     id: 4,
@@ -35,7 +35,7 @@ const questions = [
       a: "Both the <head> section and the <body> section are correct",
       b: "in the <head> section",
     },
-    correct: "a",
+    correct: "Both the <head> section and the <body> section are correct",
   },
   {
     id: 5,
@@ -44,7 +44,7 @@ const questions = [
       a: "javascript",
       b: "script",
     },
-    correct: "b",
+    correct: "script",
   },
 ];
 
@@ -70,6 +70,7 @@ function createQuestionElements() {
   const ul = document.createElement("ul");
   const alternative1 = document.createElement("li");
   const alternative2 = document.createElement("li");
+
   h2.innerHTML = `Question ${question.id} of ${questions.length}`;
   h3.innerHTML = question.question;
   alternative1.innerHTML = question.alternatives.a;
@@ -80,18 +81,16 @@ function createQuestionElements() {
   ul.appendChild(alternative1);
   ul.appendChild(alternative2);
   document.querySelector(".quiz-area").append(div);
-  alternative1.className = "quiz-alternative";
-  alternative2.className = "quiz-alternative";
+  ul.className = "testing";
 }
 
-function checkAnswer() {
-  const li = document.querySelectorAll(".quiz-alternative");
-  for (question of questions) {
-    addEventListener("click", function () {
-      if (li === question.correct) {
-        console.log("certo");
-      }
-      console.log("nao");
-    });
-  }
-}
+// document.addEventListener("click", (e) => {
+//   console.log(e.target);
+// });
+// document.getElementById("parent-list").addEventListener("click",function(e) {
+//   // e.target is our targetted element.
+//               // try doing console.log(e.target.nodeName), it will result LI
+//   if(e.target && e.target.nodeName == "LI") {
+//       console.log(e.target.id + " was clicked");
+//   }
+// });
