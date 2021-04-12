@@ -73,7 +73,7 @@ const questions = [
       a: "ESLint",
       b: "jQuery",
     },
-    correct: "d",
+    correct: "b",
   },
 ];
 function startQuiz() {
@@ -83,26 +83,44 @@ function startQuiz() {
   }, 400);
   buildQuiz();
 }
-function showResults() {}
 submitButton.addEventListener("click", showResults);
 
 function buildQuiz() {
   const output = [];
-  questions.forEach((currentQuestion, questionNumber) => {
+  questions.forEach((question, questionIndex) => {
     const answers = [];
-    for (letter in currentQuestion.alternatives) {
+    for (alternative in question.alternatives) {
       answers.push(
         `<label>
-            <input type="radio" name="question${questionNumber}" value="${letter}">
-            ${letter} :
-            ${currentQuestion.alternatives[letter]}
+            <input type="radio" name="question${questionIndex}" value="${alternative}">
+            ${alternative} :
+            ${question.alternatives[alternative]}
           </label>`
       );
     }
     output.push(
-      `<div class="question"> ${currentQuestion.question} </div>
+      `<div class="question"> ${question.question} </div>
         <div class="answers"> ${answers.join("")} </div>`
     );
   });
   quizContainer.innerHTML = output.join("");
+}
+
+function showResults() {
+  const answerContainers = document.querySelectorAll(".answers");
+  let score = 0;
+
+  questions.forEach((question, questionIndex) => {
+    const answerContainer = answerContainers[questionIndex];
+    const selector = `input[name=question${questionIndex}]:checked`;
+    const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+
+    if (userAnswer === question.correct) {
+      score++;
+      answerContainers[questionIndex].style.color = "green";
+    } else {
+      answerContainers[questionIndex].style.color = "red";
+    }
+  });
+  resultsContainer.innerHTML = `${score} out of ${questions.length}`;
 }

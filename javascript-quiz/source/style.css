@@ -38,29 +38,6 @@ body {
   border-radius: 8px;
 }
 
-.quiz-area h2 {
-  text-align: center;
-  color: #663fad;
-}
-
-.quiz-area h3 {
-  padding: 20px;
-}
-
-.quiz-area ul {
-  list-style: none;
-  text-align: left;
-  padding: 12px;
-}
-
-.quiz-area li {
-  max-width: 100vw;
-  margin: 8px;
-  padding: 5px;
-  border: black 1px solid;
-  color: black;
-}
-
 .player-inputs {
   display: flex;
   flex-direction: column;
@@ -104,4 +81,17 @@ button {
   color: white;
   border: 1px black solid;
   border-radius: 6px;
+}
+
+.question {
+  padding: 10px;
+  font-size: 1.3em;
+}
+
+.answers {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  border: 1px solid purple;
+  margin: 10px;
 }
