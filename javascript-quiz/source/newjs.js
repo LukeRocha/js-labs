@@ -1,6 +1,8 @@
+//Content containers
 const quizContainer = document.querySelector(".quiz");
 const resultsContainer = document.querySelector(".results");
 const submitButton = document.getElementById("submit-button");
+// Questions
 const questions = [
   {
     id: 1,
@@ -76,6 +78,8 @@ const questions = [
     correct: "b",
   },
 ];
+
+//DOM manipulation to Hide the intro container
 function startQuiz() {
   setTimeout(() => {
     document.querySelector(".player-inputs").style.display = "none";
@@ -83,8 +87,8 @@ function startQuiz() {
   }, 400);
   buildQuiz();
 }
-submitButton.addEventListener("click", showResults);
 
+//Render the questions
 function buildQuiz() {
   const output = [];
   questions.forEach((question, questionIndex) => {
@@ -99,13 +103,40 @@ function buildQuiz() {
       );
     }
     output.push(
-      `<div class="question"> ${question.question} </div>
-        <div class="answers"> ${answers.join("")} </div>`
+      `<div class="slide">
+        <div class="question">${question.question} </div>
+        <div class="answers">${answers.join("")} </div>
+        </div>`
     );
   });
   quizContainer.innerHTML = output.join("");
 }
 
+//Buttons to slide throught questions
+const previousButton = document.getElementById("previous");
+const nextButton = document.getElementById("next");
+const slides = document.querySelectorAll(".slide");
+let currentSlide = 0;
+
+function showSlide(n) {
+  slides[currentSlide].classList.remove("active-slide");
+  slides[n].classList.add("active-slide");
+  currentSlide = n;
+  if (currentSlide === 0) {
+    previousButton.style.display = "none";
+  } else {
+    previousButton.style.display = "inline-block";
+  }
+  if (currentSlide === slides.length - 1) {
+    nextButton.style.display = "none";
+    submitButton.style.display = "inline-block";
+  } else {
+    nextButton.style.display = "inline-block";
+    submitButton.style.display = "none";
+  }
+}
+showSlide(currentSlide);
+//Evaluete the quiz
 function showResults() {
   const answerContainers = document.querySelectorAll(".answers");
   let score = 0;
@@ -124,3 +155,7 @@ function showResults() {
   });
   resultsContainer.innerHTML = `${score} out of ${questions.length}`;
 }
+
+previousButton.addEventListener("click", showPreviousSlide);
+nextButton.addEventListener("click", showNextSlide);
+submitButton.addEventListener("click", showResults);

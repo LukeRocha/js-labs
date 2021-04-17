@@ -5,32 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Name formatter</title>
     <link rel="stylesheet" href="/formatador/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap"
+      rel="stylesheet"
+    />
     <script src="/formatador/script.js"></script>
   </head>
 
   <body>
-    <div class="formatter">
-      <h1>Name formatter</h1>
-      <div>
-        <h1>Add new name</h1>
-        <input type="text" id="nameToAdd" />
-        <button onclick="addNameToQueue()">Add name to queue</button>
+    <section class="app">
+      <div class="left">
+        <div class="names-input">
+          <h2>Input name</h2>
+          <input type="text" id="name-input" />
+          <button
+            type="button"
+            class="buttons"
+            onclick="addNameToQueue()"
+            class="main-buttons"
+          >
+            Add name to queue
+          </button>
+        </div>
+        <div class="names-queue">
+          <h2>Names queue</h2>
+          <div class="queue">
+            <ul class="queue-list"></ul>
+          </div>
+          <button class="buttons" onclick="formatAllNames()">
+            Format all names
+          </button>
+        </div>
       </div>
-
-      <hr />
-
-      <div>
-        <h1>Names on queue</h1>
-        <ul id="namesQueue"></ul>
-        <button onclick="formatNamesOnQueue()">Format names on queue</button>
+      <div class="formated-names">
+        <h2>Formated Names</h2>
+        <ul class="formated-list"></ul>
       </div>
-
-      <hr />
-
-      <div>
-        <h1>Formatted names history</h1>
-        <ul id="formattedNamesHistory"></ul>
-      </div>
-    </div>
+    </section>
   </body>
 </html>
