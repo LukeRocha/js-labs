@@ -36,10 +36,10 @@ const questions = [
     id: 4,
     question: "Where is the correct place to insert a JavaScript?",
     alternatives: {
-      a: "Both the <head> section and the <body> section are correct",
-      b: "in the <head> section",
+      a: "In the head section",
+      b: "Both the head section and the body section are correct",
     },
-    correct: "a",
+    correct: "b",
   },
   {
     id: 5,
@@ -81,14 +81,13 @@ const questions = [
 
 //DOM manipulation to Hide the intro container
 function startQuiz() {
-  setTimeout(() => {
-    document.querySelector(".player-inputs").style.display = "none";
-    document.querySelector(".quiz-area").style.display = "flex";
-  }, 400);
+  document.querySelector(".player-inputs").style.display = "none";
+  document.querySelector(".quiz-area").style.display = "flex";
   buildQuiz();
 }
 
 //Render the questions
+
 function buildQuiz() {
   const output = [];
   questions.forEach((question, questionIndex) => {
