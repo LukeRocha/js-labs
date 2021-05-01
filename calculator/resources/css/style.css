@@ -10,10 +10,22 @@ body {
 }
 .calculator {
   background: #333642;
-  border: solid 2px #27ff00;
+  border: solid 3px #27ff00;
   width: 400px;
   margin: 0 auto;
   border-radius: 4px;
+}
+
+.display-container {
+  width: 100%;
+  padding: 10px;
+  height: auto;
+  border: 3px #27ff00 solid;
+  background: #333642;
+  font-size: 30px;
+  color: white;
+  text-align: right;
+  outline: none;
 }
 
 .button {
@@ -37,15 +49,9 @@ body {
 }
 .clear {
   grid-column: span 3;
+  background: #27ff00;
 }
-.display-container {
-  width: 100%;
-  padding: 10px;
-  height: auto;
-  border: 1px #27ff00 solid;
-  background: rgb(116, 102, 102);
-  font-size: 30px;
-  color: white;
-  text-align: right;
-  outline: none;
+
+.equals {
+  background: #27ff00;
 }

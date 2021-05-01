@@ -5,6 +5,14 @@ body {
   background: #19191b;
   font-family: "Roboto", serif;
 }
+ul {
+  padding-inline-start: 0px;
+}
+
+li {
+  list-style: none;
+  margin: 0;
+}
 
 .buttons {
   background: #19191b;
@@ -12,23 +20,18 @@ body {
   border: 0.5px solid deeppink;
   padding: 4px;
   border-radius: 4px;
-  margin: 8px;
+  margin-top: 10px;
 }
 
-li {
-  list-style: none;
-}
-
-.listed-names {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.left {
-  display: flex;
-  flex-direction: column;
+.single-button {
+  border-radius: 4px;
+  background: #19191b;
+  text-align: center;
+  width: 70px;
+  height: 30px;
+  align-self: center;
+  color: white;
+  border: 0.5px solid deeppink;
 }
 
 .app {
@@ -37,8 +40,7 @@ li {
   width: 800px;
   height: auto;
   background: #333642;
-  margin: 40px auto;
-  padding: 10px;
+  margin: 10px auto;
   border: deeppink 1px solid;
   border-radius: 8px;
 }
@@ -48,12 +50,19 @@ li {
   flex-direction: column;
   justify-content: space-around;
   width: 280px;
-  height: 100px;
+  height: auto;
   padding: 40px;
   margin: 20px;
   border: 1px deeppink solid;
   background: #1e1f26;
   color: white;
+}
+
+.listed-names {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .names-queue {
@@ -62,8 +71,8 @@ li {
   justify-content: space-around;
   width: 280px;
   height: auto;
-  padding: 40px;
   margin: 20px;
+  padding: 40px;
   border: 1px deeppink solid;
   background: #1e1f26;
   color: white;

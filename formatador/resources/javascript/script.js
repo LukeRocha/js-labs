@@ -26,7 +26,7 @@ function addNameToQueue() {
   }
 
   let li = document.createElement("li");
-  li.innerHTML = `<li class="listed-names"><p id="name">${nameInput}</p><button onclick="singleFormatation(this)" class="buttons">Format</button></li>`;
+  li.innerHTML = `<li class="listed-names"><p id="name">${nameInput}</p><button onclick="singleFormatation(this)" class="single-button">Format</button></li>`;
   document.querySelector(".queue-list").appendChild(li);
   document.getElementById("name-input").value = "";
 }
@@ -42,21 +42,15 @@ function singleFormatation(button) {
 }
 
 function formatAllNames() {
-  for (const element of document.querySelector(".queue-list").children) {
-    const li = document.createElement("li");
-    li.appendChild(
-      document.createTextNode(capitalizeName(element.firstChild.textContent))
-    );
-    document.querySelector(".queue.list").innerHTML = "";
-  }
-}
+  const namesQuery = document.querySelector(".queue-list").children;
 
-//Example of the all names formatation
-function formatNamesOnQueue() {
-  for (const element of document.getElementById("namesQueue").children) {
-    const li = document.createElement("li");
-    li.appendChild(document.createTextNode(capitalizeWords(element.innerHTML)));
-    document.getElementById("formattedNamesHistory").appendChild(li);
+  for (words in namesQuery) {
+    let textInsideLi = document.getElementsByTagName("p")[words].innerText;
+    let li = document.createElement("li");
+    let formated = capitalizeName(textInsideLi);
+    li.append(formated);
+    document.querySelector(".formated-names").append(li);
   }
-  document.getElementById("namesQueue").innerHTML = "";
+  // namesQuery.children.remove();
+  // document.querySelector(".queue").firstChild.innerHTML = "";
 }
