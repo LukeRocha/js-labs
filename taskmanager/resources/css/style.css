@@ -17,20 +17,21 @@
 }
 
 .header-sup {
-  background: #1e1d52;
+  background: #2c2f31;
+  color: white;
   padding: 6px;
   color: white;
 }
 
 .filter {
   padding: 4px;
-  background: #4d5a5a;
+  background: #3b3f42;
 }
 
 .taskArea {
   display: flex;
   flex-flow: column wrap;
-  background: silver;
+  background: #303952;
   height: 100vh;
   padding: 5px;
 }
@@ -49,6 +50,6 @@
   padding: 6px;
   margin: 5px auto;
   border-radius: 4px;
-  background: slategrey;
+  background: #4c4c4c;
   color: white;
 }
