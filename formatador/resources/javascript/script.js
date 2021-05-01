@@ -42,15 +42,11 @@ function singleFormatation(button) {
 }
 
 function formatAllNames() {
-  const namesQuery = document.querySelector(".queue-list").children;
-
-  for (words in namesQuery) {
-    let textInsideLi = document.getElementsByTagName("p")[words].innerText;
+  const namesQuery = document.querySelectorAll(".test");
+  for (namer of namesQuery) {
     let li = document.createElement("li");
-    let formated = capitalizeName(textInsideLi);
-    li.append(formated);
+    li.append(capitalizeName(namer.innerText));
     document.querySelector(".formated-names").append(li);
   }
-  // namesQuery.children.remove();
-  // document.querySelector(".queue").firstChild.innerHTML = "";
+  document.querySelector(".queue-list").innerHTML = "";
 }
