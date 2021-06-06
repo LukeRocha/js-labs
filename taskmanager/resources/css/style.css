@@ -23,9 +23,17 @@
   color: white;
 }
 
-.filter {
+.features-container {
+  display: flex;
+  justify-content: space-between;
   padding: 4px;
   background: #3b3f42;
+}
+
+.header-buttons{
+  background: #3b3f42;
+  color: white;
+  border-radius: 4px;
 }
 
 .taskArea {
@@ -53,3 +61,4 @@
   background: #4c4c4c;
   color: white;
 }
+

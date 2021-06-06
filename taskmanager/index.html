@@ -11,7 +11,7 @@
     <div class="newTask-bg">
       <div class="newTask">
         <input type="text" id="taskInput" autofocus />
-        <input type="button" onclick="addTask()" value="Add task" />
+        <input class="header-buttons" type="button" onclick="addTask()" value="Add task" />
       </div>
     </div>
 
@@ -20,6 +20,7 @@
         <h2>Task manager</h2>
         <h3>keep your stuff in order</h3>
       </div>
+      <div class="features-container">
       <div class="filter">
         <input
           type="search"
@@ -28,9 +29,14 @@
           onkeyup="filter()"
           placeholder="search task here..."
         />
-        <button onclick="createTask()">New task</button>
       </div>
+      <div>
+      <button class="header-buttons" onclick="createTask()">New task</button>
+      <button class="header-buttons" onclick="showDoneTasks()">Done tasks</button>
+      <button class="header-buttons" onclick="showUndoneTasks()">Undone tasks</button>
     </div>
+  </div>
+  </div>
     <div class="taskArea"></div>
     <script src="/taskmanager/resources/javascript/script.js"></script>
   </body>
