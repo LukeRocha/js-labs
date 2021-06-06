@@ -37,7 +37,7 @@ function singleFormatation(button) {
   let name = button.previousSibling.textContent;
 
   li.innerHTML = capitalizeName(name);
-  document.querySelector(".formated-names").append(li);
+  document.querySelector(".formated-list").append(li);
   ul.remove();
 }
 
