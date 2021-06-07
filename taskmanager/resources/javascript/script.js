@@ -1,18 +1,8 @@
 const tasks = document.querySelector(".taskArea").children;
 
-function createTask() {
+function createNewTask() {
   document.querySelector(".newTask-bg").style.display = "flex";
-  document.getElementById("taskinput").focus();
-}
-
-function doneTask(element) {
-  if (element.checked != false) {
-    setTimeout(() => {
-      element.parentNode.style.background = "#6dd06d";
-    }, 200);
-    element.parentNode.classList.add("completedTask");
-  }
-  element.parentNode.style.background = "slategrey";
+  document.getElementById("taskInput").focus();
 }
 
 function addTask() {
@@ -23,12 +13,22 @@ function addTask() {
 
   div.className = "tasks";
   taskArea.append(div);
-  div.innerHTML = "<input type='checkbox' onclick='doneTask(this)'>";
+  div.innerHTML = "<input type='checkbox' name='checkBeforeYouGetShreked' onclick='doneTask(this)'>";
   div.append(p);
   p.append(task.value);
 
   task.value = " ";
   document.querySelector(".newTask-bg").style.display = "none";
+}
+
+function doneTask(element) {
+  if (element.checked != false) {
+    setTimeout(() => {
+      element.parentNode.style.background = "#6dd06d";
+    }, 200);
+    element.parentNode.classList.add("completedTask");
+  }
+  element.parentNode.style.background = "#3b3f42";
 }
 
 function filter() {
@@ -37,9 +37,22 @@ function filter() {
 
   for (task of tasks) {
     if (task.innerText.toUpperCase().indexOf(term) > -1) {
-      task.style.display = "";
+      task.style.display = "flex";
     } else {
       task.style.display = "none";
     }
   }
 }
+
+function showDoneTasks() {
+  for(let element of tasks) {
+    element.firstChild.checked? element.style.display ="flex" : element.style.display = "none"
+  }
+}
+
+function showUndoneTasks() {
+  for(let element of tasks) {
+    element.firstChild.checked? element.style.display ="none" : element.style.display = "flex"
+  }
+}
+

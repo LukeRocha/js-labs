@@ -10,7 +10,7 @@
   <body>
     <div class="newTask-bg">
       <div class="newTask">
-        <input type="text" id="taskInput" autofocus />
+        <input type="text" placeholder="input task here..." id="taskInput" autofocus />
         <input class="header-buttons" type="button" onclick="addTask()" value="Add task" />
       </div>
     </div>
@@ -31,7 +31,7 @@
         />
       </div>
       <div>
-      <button class="header-buttons" onclick="createTask()">New task</button>
+      <button class="header-buttons" onclick="createNewTask()">New task</button>
       <button class="header-buttons" onclick="showDoneTasks()">Done tasks</button>
       <button class="header-buttons" onclick="showUndoneTasks()">Undone tasks</button>
     </div>
