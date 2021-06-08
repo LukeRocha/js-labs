@@ -62,3 +62,9 @@ function showUndoneTasks() {
     element.firstChild.checked? element.style.display ="none" : element.style.display = "flex"
   }
 }
+
+function showAllTasks() {
+  for(element of tasks) {
+     element.style.display = "flex "
+  }
+}

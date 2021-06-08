@@ -8,5 +8,5 @@ function numbers(integer) {
       display.innerHTML = value
   }
   value += integer.values
-  display.innerHTML = value
+  display.innerHTML = value 
 }
