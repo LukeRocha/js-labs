@@ -60,7 +60,7 @@
 .tasks {
   display: flex;
   justify-content: space-between;
-  flex-flow: row-reverse nowrap;
+  flex-flow: row nowrap;
   width: 40%;
   padding: 6px;
   margin: 5px auto;

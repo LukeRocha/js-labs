@@ -63,6 +63,8 @@ function showUndoneTasks() {
   }
 }
 
-// function deleteTask(element) {
-//   element.parentNode.remove()
-// }
+function showAllTasks() {
+  for(task of tasks){
+    task.style.display = "flex"
+  }
+}
