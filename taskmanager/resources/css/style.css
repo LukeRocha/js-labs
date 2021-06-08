@@ -37,7 +37,7 @@
   background: #3b3f42;
 }
 
-.header-buttons{
+.main-buttons{
   background: #3b3f42;
   color: white;
   border-radius: 4px;
@@ -69,3 +69,9 @@
   color: white;
 }
 
+.tasks p {
+  text-align: start;
+}
+#filter {
+  width: 150%;
+}

@@ -10,13 +10,20 @@ function addTask() {
   const task = document.getElementById("taskInput");
   const taskArea = document.querySelector(".taskArea");
   const div = document.createElement("div");
-
+  const deleteButton = button = document.createElement('input');
+  deleteButton.type = 'button';
+  deleteButton.value = 'X';
+  deleteButton.className = 'main-buttons';
+  deleteButton.onclick = function deleteTask() { this.parentNode.remove()}
+  
   div.className = "tasks";
   taskArea.append(div);
-  div.innerHTML = "<input type='checkbox' name='checkBeforeYouGetShreked' onclick='doneTask(this)'>";
+  div.innerHTML = "<input type='checkbox' name='checkBeforeYouGetShreked' onclick='doneTask(this)'>"
+  
   div.append(p);
+  div.append(deleteButton)
+  
   p.append(task.value);
-
   task.value = " ";
   document.querySelector(".newTask-bg").style.display = "none";
 }
@@ -56,3 +63,6 @@ function showUndoneTasks() {
   }
 }
 
+// function deleteTask(element) {
+//   element.parentNode.remove()
+// }
