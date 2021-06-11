@@ -25,7 +25,7 @@ const questions = [
   {
     id: 3,
     question:
-      "What is the correct syntax for referring to an external script called 'xxx.js'?",
+    "What is the correct syntax for referring to an external script called 'xxx.js'?",
     alternatives: {
       a: "script name:xxx.js",
       b: "script src='xxx.js",
@@ -75,16 +75,15 @@ const questions = [
       a: "ESLint",
       b: "jQuery",
     },
-    correct: "b",
+    correct: "a",
   },
 ];
 
 //DOM manipulation to Hide the intro container
 function startQuiz() {
-  document.querySelector(".player-inputs").style.display = "none";
-  document.querySelector(".quiz-area").style.display = "flex";
-  buildQuiz();
-}
+    document.querySelector(".player-inputs").style.display = "none";
+    document.querySelector(".quiz-area").style.display = "flex";
+  }
 
 //Render the questions
 
@@ -95,26 +94,29 @@ function buildQuiz() {
     for (alternative in question.alternatives) {
       answers.push(
         `<label>
-            <input type="radio" name="question${questionIndex}" value="${alternative}">
-            ${alternative} :
+        <input type="radio" name="question${questionIndex}" value="${alternative}">
+        ${alternative} :
             ${question.alternatives[alternative]}
-          </label>`
-      );
-    }
-    output.push(
-      `<div class="slide">
-        <div class="question">${question.question} </div>
-        <div class="answers">${answers.join("")} </div>
-        </div>`
-    );
-  });
-  quizContainer.innerHTML = output.join("");
+            </label>`
+            );
+          }
+          output.push(
+            `<div class="slides" name="slide">
+            <div class="question">${question.question} </div>
+            <div class="answers">${answers.join("")} </div>
+            </div>`
+            );
+          });
+          quizContainer.innerHTML = output.join("");
 }
+buildQuiz();
+
+
 
 //Buttons to slide throught questions
 const previousButton = document.getElementById("previous");
 const nextButton = document.getElementById("next");
-const slides = document.querySelectorAll(".slide");
+const slides = document.getElementsByName("slide");
 let currentSlide = 0;
 
 function showSlide(n) {
@@ -135,11 +137,14 @@ function showSlide(n) {
   }
 }
 showSlide(currentSlide);
-//Evaluete the quiz
+
+
+
+//Evaluate the quiz
 function showResults() {
   const answerContainers = document.querySelectorAll(".answers");
   let score = 0;
-
+  
   questions.forEach((question, questionIndex) => {
     const answerContainer = answerContainers[questionIndex];
     const selector = `input[name=question${questionIndex}]:checked`;
@@ -154,7 +159,10 @@ function showResults() {
   });
   resultsContainer.innerHTML = `${score} out of ${questions.length}`;
 }
+function showNextSlide() {
+  showSlide(currentSlide + 1);
+}
 
-previousButton.addEventListener("click", showPreviousSlide);
-nextButton.addEventListener("click", showNextSlide);
-submitButton.addEventListener("click", showResults);
+function showPreviousSlide() {
+  showSlide(currentSlide - 1);
+}

@@ -13,11 +13,11 @@
     <header class="header"><h1 class="logo">Javascript Quiz</h1></header>
 
     <section class="player-inputs">
-      <h2>Hey, let's play a JavaScrip Quiz?</h2>
+      <h2>Ahoy, let's play a JavaScrip Quiz?</h2>
       <input
         type="button"
         onclick="startQuiz()"
-        value="Start"
+        value="Yaaaay!!"
         id="start-button"
       />
     </section>
@@ -25,9 +25,9 @@
       <div class="quiz-container">
         <div class="quiz"></div>
       </div>
-      <button id="next">Next Question</button>
-      <button id="previous">Previous Question</button>
-      <button id="submit-button">Submit</button>
+      <button id="next" onclick="showNextSlide()">Next Question</button>
+      <button id="previous" onclick="showPreviousSlide()">Previous Question</button>
+      <button id="submit-button" onclick="showResults()">Submit</button>
       <div class="results"></div>
     </section>
     <script src="/javascript-quiz/resources/javascript/script.js"></script>
