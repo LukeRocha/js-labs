@@ -26,7 +26,8 @@ function addNameToQueue() {
   }
 
   let li = document.createElement("li");
-  li.innerHTML = `<li class="listed-names"><p class="queued-name" id="name">${nameInput}</p><button onclick="singleFormatation(this)" class="single-button">Format</button></li>`;
+  li.className = "listed-names"
+  li.innerHTML = `<p class="queued-name" id="name">${nameInput}</p><button onclick="singleFormatation(this)" class="single-button">Format</button>`;
   document.querySelector(".queue-list").appendChild(li);
   document.getElementById("name-input").value = "";
 }
