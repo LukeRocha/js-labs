@@ -27,7 +27,8 @@ function addNameToQueue() {
   }
 
   let li = document.createElement("li");
-  li.innerHTML = `<li class="listed-names"><p class="queued-name" id="name">${nameInput}</p><button onclick="singleFormatation(this)" class="single-button">Format</button></li>`;
+  li.className = "listed-names"
+  li.innerHTML = `<p class="queued-name" id="name">${nameInput}</p><button onclick="singleFormatation(this)" class="single-button">Format</button>`;
   document.querySelector(".queue-list").appendChild(li);
   document.getElementById("name-input").value = "";
 }
@@ -38,7 +39,7 @@ function singleFormatation(button) {
   let name = button.previousSibling.textContent;
 
   li.innerHTML = capitalizeName(name);
-  document.querySelector(".formated-list").append(li);
+  document.querySelector(".formatted-list").append(li);
   ul.remove();
 }
 
@@ -47,7 +48,7 @@ function formatAllNames() {
   for (namer of namesQuery) {
     let li = document.createElement("li");
     li.append(capitalizeName(namer.innerText));
-    document.querySelector(".formated-list").append(li);
+    document.querySelector(".formatted-list").append(li);
   }
   document.querySelector(".queue-list").innerHTML = "";
 }
