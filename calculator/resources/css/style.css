@@ -8,6 +8,20 @@ body {
   padding-bottom: 30px;
   padding-top: 30px;
 }
+
+a {
+  text-decoration: none;
+  color: white;
+}
+.return-button {
+  width: 80px;
+  padding: 5px;
+  color: white;
+  background-color: #19191b;
+  border: white 1px solid;
+  border-radius: 4px;
+}
+
 .calculator {
   background: #333642;
   border: solid 3px #27ff00;

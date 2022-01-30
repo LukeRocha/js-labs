@@ -23,6 +23,21 @@ h2 {
   margin: 0 0 10px 0;
 }
 
+a {
+  text-decoration: none;
+  color: white;
+}
+.return-button {
+  margin-top: 40px;
+  margin-left: 10px;
+  width: 80px;
+  padding: 5px;
+  color: white;
+  background-color: #19191b;
+  border: white 1px solid;
+  border-radius: 4px;
+}
+
 .buttons {
   background: #19191b;
   color: white;

@@ -2,7 +2,7 @@ const tasks = document.querySelector(".taskArea").children;
 
 function createNewTask() {
   document.querySelector(".newTask-bg").style.display = "flex";
-  document.getElementById("taskInput").focus();
+  return document.getElementById("taskInput").focus();
 }
 
 function addTask() {
@@ -10,19 +10,22 @@ function addTask() {
   const task = document.getElementById("taskInput");
   const taskArea = document.querySelector(".taskArea");
   const div = document.createElement("div");
-  const deleteButton = button = document.createElement('input');
-  deleteButton.type = 'button';
-  deleteButton.value = 'X';
-  deleteButton.className = 'main-buttons';
-  deleteButton.onclick = function deleteTask() { this.parentNode.remove()}
-  
+  const deleteButton = (button = document.createElement("input"));
+  deleteButton.type = "button";
+  deleteButton.value = "X";
+  deleteButton.className = "main-buttons";
+  deleteButton.onclick = function deleteTask() {
+    this.parentNode.remove();
+  };
+
   div.className = "tasks";
   taskArea.append(div);
-  div.innerHTML = "<input type='checkbox' name='checkBeforeYouGetShreked' onclick='doneTask(this)'>"
-  
+  div.innerHTML =
+    "<input type='checkbox' name='checkBeforeYouGetShreked' onclick='doneTask(this)'>";
+
   div.append(p);
-  div.append(deleteButton)
-  
+  div.append(deleteButton);
+
   p.append(task.value);
   task.value = " ";
   document.querySelector(".newTask-bg").style.display = "none";
@@ -52,19 +55,23 @@ function filter() {
 }
 
 function showDoneTasks() {
-  for(let element of tasks) {
-    element.firstChild.checked? element.style.display ="flex" : element.style.display = "none"
+  for (let element of tasks) {
+    element.firstChild.checked
+      ? (element.style.display = "flex")
+      : (element.style.display = "none");
   }
 }
 
 function showUndoneTasks() {
-  for(let element of tasks) {
-    element.firstChild.checked? element.style.display ="none" : element.style.display = "flex"
+  for (let element of tasks) {
+    element.firstChild.checked
+      ? (element.style.display = "none")
+      : (element.style.display = "flex");
   }
 }
 
 function showAllTasks() {
-  for(element of tasks) {
-     element.style.display = "flex "
+  for (element of tasks) {
+    element.style.display = "flex ";
   }
 }

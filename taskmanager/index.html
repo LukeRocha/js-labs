@@ -6,14 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/taskmanager/resources/css/style.css" />
     <title>Task Manager</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">  
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="newTask-bg">
       <div class="newTask">
-        <input type="text" placeholder="input task here..." id="taskInput" autofocus />
-        <input class="main-buttons" type="button" onclick="addTask()" value="Add task" />
+        <input
+          type="text"
+          placeholder="input task here..."
+          id="taskInput"
+          autofocus
+        />
+        <input
+          class="main-buttons"
+          type="button"
+          onclick="addTask()"
+          value="Add task"
+        />
       </div>
     </div>
 
@@ -21,25 +34,36 @@
       <div class="header-sup">
         <h2>Task manager</h2>
         <h3>keep your stuff in order</h3>
+        <button class="main-buttons">
+          <a class="main-buttons" href="/">Return</a>
+        </button>
       </div>
       <div class="features-container">
-      <div class="filter">
-        <input
-          type="search"
-          name="filter"
-          id="filter"
-          onkeyup="filter()"
-          placeholder="search task here..."
-        />
+        <div class="filter">
+          <input
+            type="search"
+            name="filter"
+            id="filter"
+            onkeyup="filter()"
+            placeholder="search task here..."
+          />
+        </div>
+        <div>
+          <button class="main-buttons" onclick="createNewTask()">
+            New task
+          </button>
+          <button class="main-buttons" onclick="showDoneTasks()">
+            Done tasks
+          </button>
+          <button class="main-buttons" onclick="showUndoneTasks()">
+            Undone tasks
+          </button>
+          <button class="main-buttons" onclick="showAllTasks()">
+            Show all tasks
+          </button>
+        </div>
       </div>
-      <div>
-      <button class="main-buttons" onclick="createNewTask()">New task</button>
-      <button class="main-buttons" onclick="showDoneTasks()">Done tasks</button>
-      <button class="main-buttons" onclick="showUndoneTasks()">Undone tasks</button>
-      <button class="main-buttons" onclick="showAllTasks()">Show all tasks</button>
     </div>
-  </div>
-  </div>
     <div class="taskArea"></div>
     <script src="/taskmanager/resources/javascript/script.js"></script>
   </body>

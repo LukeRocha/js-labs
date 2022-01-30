@@ -6,11 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>|| Javascript Quiz ||</title>
     <link rel="stylesheet" href="/javascript-quiz/resources/css/style.css" />
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">    
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <header class="header"><h1 class="logo">Javascript Quiz</h1></header>
+    <header class="header">
+      <h1 class="logo">Javascript Quiz</h1>
+    </header>
+    <button class="return-button"><a href="/">Return</a></button>
 
     <section class="player-inputs">
       <h2>Ahoy, let's play a JavaScrip Quiz?</h2>
@@ -26,7 +32,9 @@
         <div class="quiz"></div>
       </div>
       <button id="next" onclick="showNextSlide()">Next Question</button>
-      <button id="previous" onclick="showPreviousSlide()">Previous Question</button>
+      <button id="previous" onclick="showPreviousSlide()">
+        Previous Question
+      </button>
       <button id="submit-button" onclick="showResults()">Submit</button>
       <div class="results"></div>
     </section>
