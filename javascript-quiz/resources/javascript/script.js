@@ -25,7 +25,7 @@ const questions = [
   {
     id: 3,
     question:
-    "What is the correct syntax for referring to an external script called 'xxx.js'?",
+      "What is the correct syntax for referring to an external script called 'xxx.js'?",
     alternatives: {
       a: "script name:xxx.js",
       b: "script src='xxx.js",
@@ -81,15 +81,15 @@ const questions = [
 
 //DOM manipulation to Hide the intro container
 function startQuiz() {
-    document.querySelector(".player-inputs").style.display = "none";
-    document.querySelector(".quiz-area").style.display = "flex";
-  }
+  document.querySelector(".player-inputs").style.display = "none";
+  document.querySelector(".quiz-area").style.display = "flex";
+}
 
 //Render the questions
 
 function buildQuiz() {
   const output = [];
-  questions.forEach((question, questionIndex) => {
+  questions.map((question, questionIndex) => {
     const answers = [];
     for (alternative in question.alternatives) {
       answers.push(
@@ -98,20 +98,18 @@ function buildQuiz() {
         ${alternative} :
             ${question.alternatives[alternative]}
             </label>`
-            );
-          }
-          output.push(
-            `<div class="slides" name="slide">
+      );
+    }
+    output.push(
+      `<div class="slides" name="slide">
             <div class="question">${question.question} </div>
             <div class="answers">${answers.join("")} </div>
             </div>`
-            );
-          });
-          quizContainer.innerHTML = output.join("");
+    );
+  });
+  quizContainer.innerHTML = output.join("");
 }
 buildQuiz();
-
-
 
 //Buttons to slide throught questions
 const previousButton = document.getElementById("previous");
@@ -138,13 +136,11 @@ function showSlide(n) {
 }
 showSlide(currentSlide);
 
-
-
 //Evaluate the quiz
 function showResults() {
   const answerContainers = document.querySelectorAll(".answers");
   let score = 0;
-  
+
   questions.forEach((question, questionIndex) => {
     const answerContainer = answerContainers[questionIndex];
     const selector = `input[name=question${questionIndex}]:checked`;
