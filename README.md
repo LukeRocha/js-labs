@@ -12,5 +12,5 @@ It consists of four small apps:
 
 Setup
 ---
-Just open the HTML file on browser to run the project
+Just open the HTML file on browser to run the project.
 
